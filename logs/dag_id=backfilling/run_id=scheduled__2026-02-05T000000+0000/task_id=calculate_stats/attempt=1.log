@@ -1,0 +1,11 @@
+{"timestamp":"2026-02-27T06:23:41.448189Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2026-02-27T06:23:41.451604Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/backfilling.py","logger":"airflow.models.dagbag.BundleDagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2026-02-27T06:23:41.490711Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-02-27T06:23:41.491253Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-02-27T06:23:41.491719Z","level":"info","event":"Current task name:calculate_stats","logger":"task.stdout"}
+{"timestamp":"2026-02-27T06:23:41.491999Z","level":"info","event":"Dag name:backfilling","logger":"task.stdout"}
+{"timestamp":"2026-02-27T06:23:41.507387Z","level":"info","event":"No events found for this interval.","logger":"task.stdout"}
+{"timestamp":"2026-02-27T06:23:41.507628Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":230}
+{"timestamp":"2026-02-27T06:23:41.525813Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2026-02-27T06:23:41.526458Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2026-02-27T06:23:41.529216Z","level":"info","event":"Task operator:<Task(PythonOperator): calculate_stats>","logger":"task.stdout"}
