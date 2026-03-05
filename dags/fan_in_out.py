@@ -1,27 +1,23 @@
-from datetime import datetime, timedelta
+from datetime import datetime
+
 from airflow import DAG
 from airflow.operators.empty import EmptyOperator
 
+
 with DAG(
     dag_id="fan_in_out",
-    start_date=datetime.now() - timedelta(days=3),
+    start_date=datetime(2024, 1, 1),
     schedule="@daily",
     catchup=False,
 ) as dag:
-    
+
     start = EmptyOperator(task_id="start")
 
-    fetch_sales = EmptyOperator(task_id="fetch_sales")
-    clean_sales = EmptyOperator(task_id="clean_sales")
+    task_1 = EmptyOperator(task_id="task_1")
+    task_2 = EmptyOperator(task_id="task_2")
+    task_3 = EmptyOperator(task_id="task_3")
 
-    fetch_weather = EmptyOperator(task_id="fetch_weather")
-    clean_weather = EmptyOperator(task_id="clean_weather")
+    join = EmptyOperator(task_id="join")
 
-    join_dataset = EmptyOperator(task_id="join_dataset")
-    train_model = EmptyOperator(task_id="train_model")
-    deploy_model = EmptyOperator(task_id="deploy_model")
-
-    start >> [fetch_sales, fetch_weather]
-    fetch_sales >> clean_sales
-    fetch_weather >> clean_weather
-    [clean_sales, clean_weather] >> join_dataset >> train_model >> deploy_model
+    start >> [task_1, task_2, task_3]
+    [task_1, task_2, task_3] >> join
